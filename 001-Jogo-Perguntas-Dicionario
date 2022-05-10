@@ -1,0 +1,63 @@
+perguntas = {
+    'Pergunta 1': {
+        'pergunta': 'Qual a capital do Brasil?',
+        'respostas': {
+            'a': 'Sao Paulo',
+            'b': 'Brasilia',
+            'c': 'Rio de Janeiro',
+        },
+        'resposta_certa': 'b',
+    },
+    'Pergunta 2': {
+        'pergunta': 'Qual a capital da Irlanda?',
+        'respostas': {
+            'a': 'Dublin',
+            'b': 'Cork',
+            'c': 'Limerick',
+        },
+        'resposta_certa': 'a',
+    },
+    'Pergunta 3': {
+        'pergunta': 'Qual a capital de Portugal?',
+        'respostas': {
+            'a': 'Porto',
+            'b': 'Braga',
+            'c': 'Lisboa',
+        },
+        'resposta_certa': 'c',
+    },
+    'Pergunta 4': {
+        'pergunta': 'Qual a capital da Italia?',
+        'respostas': {
+            'a': 'Veneza',
+            'b': 'Roma',
+            'c': 'Milao',
+        },
+        'resposta_certa': 'b',
+    },
+}
+print('=-' * 20)
+print('Jogo de perguntas e respostas')
+res_certas = 0
+for pk, pv in perguntas.items():
+    print('=' * 40)
+    print(f'{pk}: {pv["pergunta"]}')
+    print('Escolha uma das opcoes abaixo  ')
+    for rk, rv in pv['respostas'].items():
+        print(f'[{rk}]:{rv}')
+
+    usuario = input('Resposta: ')
+
+    if usuario == pv['resposta_certa']:
+        print('Ebaaaa... Certa a resposta!')
+        res_certas += 1
+    else:
+        print(f'Resposta errada. A resposta certa e -> {pv["resposta_certa"]}')
+
+print('=-' * 20)
+print('Confira sua pontuacao')
+qtd_perguntas = len(perguntas)
+porcento = res_certas / qtd_perguntas * 100
+print(f'{porcento:.0f}% correto.\nVoce acertou {res_certas} pergunta(s) de {qtd_perguntas}.')
+
+
